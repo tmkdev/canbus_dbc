@@ -1,0 +1,90 @@
+VERSION ""
+
+
+NS_ :
+    NS_DESC_
+    CM_
+    BA_DEF_
+    BA_
+    VAL_
+    CAT_DEF_
+    CAT_
+    FILTER
+    BA_DEF_DEF_
+    EV_DATA_
+    ENVVAR_DATA_
+    SGTYPE_
+    SGTYPE_VAL_
+    BA_DEF_SGTYPE_
+    BA_SGTYPE_
+    SIG_TYPE_REF_
+    VAL_TABLE_
+    SIG_GROUP_
+    SIG_VALTYPE_
+    SIGTYPE_VALTYPE_
+    BO_TX_BU_
+    BA_DEF_REL_
+    BA_REL_
+    BA_DEF_DEF_REL_
+    BU_SG_REL_
+    BU_EV_REL_
+    BU_BO_REL_
+    SG_MUL_VAL_
+
+BS_: 
+BU_: 
+BO_ 2024 Diag_Response: 8 Vector__XXX
+   SG_ DATALEN : 7|8@0+ (1,0) [0|0] "" Vector__XXX
+   SG_ Service_Response : 15|8@0+ (1,-64) [0|0] "" Vector__XXX
+   SG_ PID M : 23|16@0+ (1,0) [0|0] "" Vector__XXX
+   SG_ O_FuelSystemStatus m3 : 39|16@0+ (1,0) [0|65535] "" Vector__XXX
+   SG_ O_CalcEngineLoad m4 : 39|8@0+ (0.39216,0) [0|100] "%" Vector__XXX
+   SG_ O_EngineCoolantTemp m5 : 39|8@0+ (1,-40) [-40|215] "C" Vector__XXX
+   SG_ O_ShortFuelTrimBank1 m6 : 39|8@0+ (0.78125,-100) [-100|99.2188] "%" Vector__XXX
+   SG_ O_LongFuelTrimBank1 m7 : 39|8@0+ (0.78125,-100) [-100|99.2188] "%" Vector__XXX
+   SG_ O_ShortFuelTrimBank2 m8 : 39|8@0+ (0.78125,-100) [-100|99.2188] "%" Vector__XXX
+   SG_ O_LongFuelTrimBank2 m9 : 39|8@0+ (0.78125,-100) [-100|99.2188] "%" Vector__XXX
+   SG_ O_FuelPressure m10 : 39|8@0+ (3,0) [0|765] "kPa" Vector__XXX
+   SG_ O_IntakeManiAbsPress m11 : 39|8@0+ (1,0) [0|255] "kPa" Vector__XXX
+   SG_ O_EngineRPM m12 : 39|16@0+ (0.25,0) [0|16383.8] "rpm" Vector__XXX
+   SG_ O_VehicleSpeed m13 : 39|8@0+ (1,0) [0|255] "km/h" Vector__XXX
+   SG_ O_TimingAdvance m14 : 39|8@0+ (0.5,-64) [-64|63.5] "DegTDC" Vector__XXX
+   SG_ O_IntakeAirTemperature m15 : 39|8@0+ (1,-40) [-40|215] "C" Vector__XXX
+   SG_ O_MAFAirFlowRate m16 : 39|16@0+ (0.01,0) [0|655.35] "grams/sec" Vector__XXX
+   SG_ O_ThrottlePosition m17 : 39|8@0+ (0.39216,0) [0|100] "%" Vector__XXX
+   SG_ O_CmdSecAirStatus m18 : 39|8@0+ (1,0) [0|255] "" Vector__XXX
+   SG_ O_OxySensor1_Volt m20 : 39|8@0+ (0.005,0) [0|1.275] "V" Vector__XXX
+   SG_ O_OxySensor1_STFT m20 : 47|8@0+ (0.78125,-100) [-100|99.2188] "%" Vector__XXX
+   SG_ O_OxySensor2_Volt m21 : 39|8@0+ (0.005,0) [0|1.275] "V" Vector__XXX
+   SG_ O_OxySensor2_STFT m21 : 47|8@0+ (0.78125,-100) [-100|99.2188] "%" Vector__XXX
+   SG_ O_OxySensor3_Volt m22 : 39|8@0+ (0.005,0) [0|1.275] "V" Vector__XXX
+   SG_ O_OxySensor3_STFT m22 : 47|8@0+ (0.78125,-100) [-100|99.2188] "%" Vector__XXX
+   SG_ O_OxySensor4_Volt m23 : 39|8@0+ (0.005,0) [0|1.275] "V" Vector__XXX
+   SG_ O_OxySensor4_STFT m23 : 47|8@0+ (0.78125,-100) [-100|99.2188] "%" Vector__XXX
+   SG_ O_OxySensor5_Volt m24 : 39|8@0+ (0.005,0) [0|1.275] "V" Vector__XXX
+   SG_ O_OxySensor5_STFT m24 : 47|8@0+ (0.78125,-100) [-100|99.2188] "%" Vector__XXX
+   SG_ O_OxySensor6_Volt m25 : 39|8@0+ (0.005,0) [0|1.275] "V" Vector__XXX
+   SG_ O_OxySensor6_STFT m25 : 47|8@0+ (0.78125,-100) [-100|99.2188] "%" Vector__XXX
+   SG_ O_OxySensor7_Volt m26 : 39|8@0+ (0.005,0) [0|1.275] "V" Vector__XXX
+   SG_ O_OxySensor7_STFT m26 : 47|8@0+ (0.78125,-100) [-100|99.2188] "%" Vector__XXX
+   SG_ O_OxySensor8_Volt m27 : 39|8@0+ (0.005,0) [0|1.275] "V" Vector__XXX
+   SG_ O_OxySensor8_STFT m27 : 47|8@0+ (0.78125,-100) [-100|99.2188] "%" Vector__XXX
+   SG_ O_OBDStandard m28 : 39|8@0+ (1,0) [0|255] "" Vector__XXX
+   SG_ O_TimeSinceEngStart m30 : 39|16@0+ (1,0) [0|65535] "seconds" Vector__XXX
+   SG_ OE_IntakeAirTemp2 m8198 : 39|8@0+ (1,-40) [-40|215] "C" Vector__XXX
+   SG_ OE_KnockRetard m4518 : 39|8@0+ (1,0) [0|0] "Deg" Vector__XXX
+
+BA_DEF_ BO_ "VFrameFormat" ENUM "StandardCAN","ExtendedCAN","StandardCAN_FD","ExtendedCAN_FD","J1939PG";
+BA_DEF_ BO_ "GenMsgBackgroundColor" STRING ;
+BA_DEF_ BO_ "GenMsgForegroundColor" STRING ;
+BA_DEF_ BO_ "isj1939dbc" INT 0 0;
+BA_ "VFrameFormat" BO_ 2024 0;
+BA_ "GenMsgForegroundColor" BO_ 2024 "#ff0000";
+BA_DEF_DEF_ "VFrameFormat" "StandardCAN";
+BA_DEF_DEF_ "GenMsgBackgroundColor" "#ffffff";
+BA_DEF_DEF_ "GenMsgForegroundColor" "#000000";
+BA_DEF_DEF_ "isj1939dbc" 0;
+CM_ BO_ 2024 "OBD2 DBC developed by canmatrix & CSS Electronics - for questions contact us at www.csselectronics.com. Modified for mode 22 by tmkdev.";
+VAL_ 2024 O_FuelSystemStatus 1 "Open loop (insuff. eng. temp.)" 2 "Closed loop (oxy sens)" 4 "Open loop (eng. load, fuel cut)" 8 "Open loop (system failure)" 16 "Closed loop (feedback issue)";
+VAL_ 2024 O_CmdSecAirStatus 1 "Upstream" 2 "Downstream catalytic conv" 4 "From outside atmosphere/off" 8 "Pump cmd on for diagn.";
+VAL_ 2024 O_OBDStandard 1 "OBD-II as defined by the CARB" 2 "OBD as defined by the EPA" 3 "OBD and OBD-II" 4 "OBD-I" 5 "Not OBD compliant" 6 "EOBD (Europe)" 7 "EOBD and OBD-II" 8 "EOBD and OBD" 9 "EOBD, OBD and OBD II" 10 "JOBD (Japan)" 11 "JOBD and OBD II" 12 "JOBD and EOBD" 13 "JOBD, EOBD, and OBD II" 14 "Reserved" 15 "Reserved" 16 "Reserved" 17 "Eng. Manu. Diag. (EMD)" 18 "EMD Enhanced (EMD+)" 19 "HD OBD-C" 20 "HD OBD" 21 "WWH OBD" 22 "Reserved" 23 "HD EOBD-I" 24 "HD EOBD-I N" 25 "HD EOBD-II" 26 "HD EOBD-II N" 27 "Reserved" 28 "OBDBr-1" 29 "OBDBr-2" 30 "KOBD" 31 "IOBD I" 32 "IOBD II" 33 "HD EOBD-IV" 34 "Reserved" 35 "Reserved";
