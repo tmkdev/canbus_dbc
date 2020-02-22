@@ -117,7 +117,7 @@ BO_ 497 PPEI_Platform_General_Status: 8 PPEI_Chassis
    SG_ display_measurement_system : 59|1@1+ (1,0) [0|1] "" Vector__XXX
 
 BO_ 495 PPEI_Fuel_System_Request_2: 8 PPEI_Engine
-   SG_ mass_airflow : 31|16@0+ (0.01,0) [0|656] "gram/s" Vector__XXX
+   SG_ mass_airflow : 16|16@1+ (0.01,0) [0|656] "gram/s" Vector__XXX
 
 BO_ 491 PPEI_Fuel_System_Status: 2 PPEI_Engine
    SG_ fuel_system_estimated_pressure : 1|10@0+ (1,0) [0|1023] "kPa" Vector__XXX
