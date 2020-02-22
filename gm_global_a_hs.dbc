@@ -95,7 +95,7 @@ BO_ 1217 PPEI_Engine_General_Status_4: 8 PPEI_Engine
    SG_ outside_air_temperature_estimate : 32|8@1+ (0.5,-40) [-40|87.5] "C" Vector__XXX
 
 BO_ 1225 PPEI_Transmission_General_Status_3: 8 PPEI_Transmission
-   SG_ trans_oil_temp : 8|8@1+ (1,-40) [-40|215] "C" Vector__XXX
+   SG_ trans_oil_temp : 4|8@1+ (1,-40) [-40|215] "C" Vector__XXX
 
 BO_ 1233 PPEI_Engine_General_Status_5: 8 PPEI_Engine
    SG_ engine_oil_temp : 8|8@1+ (1,-40) [-40|215] "C" Vector__XXX
