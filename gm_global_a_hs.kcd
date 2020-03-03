@@ -1,0 +1,382 @@
+<NetworkDefinition xmlns="http://kayak.2codeornot2code.org/1.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="Definition.xsd">
+  <Document version="" />
+  <Node id="1" name="PPEI_Engine" />
+  <Node id="2" name="PPEI_Chassis" />
+  <Node id="3" name="PPEI_Transmission" />
+  <Bus name="Bus">
+    <Message id="0x0C9" length="7" name="PPEI_Engine_General_Status_1">
+      <Producer>
+        <NodeRef id="1" />
+      </Producer>
+      <Signal length="2" name="engine_speed_status" offset="0">
+        <LabelSet>
+          <Label name="Normal_Operation" value="0" />
+          <Label name="Degraded_Operation" value="1" />
+          <Label name="Undefined" value="2" />
+          <Label name="Invalid" value="3" />
+        </LabelSet>
+      </Signal>
+      <Signal name="engine_idle_active" offset="2">
+        <Value max="1" min="0" />
+      </Signal>
+      <Signal name="powertrain_run_aborted" offset="4">
+        <Value max="1" min="0" />
+      </Signal>
+      <Signal name="powertrain_crank_aborted" offset="5">
+        <Value max="1" min="0" />
+      </Signal>
+      <Signal name="powertrain_crank_active" offset="6">
+        <Value max="1" min="0" />
+      </Signal>
+      <Signal name="engine_run_active" offset="7">
+        <Value max="1" min="0" />
+      </Signal>
+      <Signal endianess="big" length="16" name="engine_speed" offset="8">
+        <Value max="16383.8" min="0" slope="0.25" unit="RPM" />
+      </Signal>
+      <Signal name="driver_throttle_override_detected" offset="28">
+        <Value max="1" min="0" />
+      </Signal>
+      <Signal name="cruise_control_enabled" offset="29">
+        <Value max="1" min="0" />
+      </Signal>
+      <Signal name="cruise_control_active" offset="30">
+        <Value max="1" min="0" />
+      </Signal>
+      <Signal name="accelerator_pedal_validity" offset="31">
+        <Value max="1" min="0" />
+      </Signal>
+      <Signal length="8" name="accelerator_actual_position" offset="32">
+        <Value max="100" min="0" slope="0.393156" unit="%" />
+      </Signal>
+      <Signal name="powertrain_brake_pedal_descrete_input_status" offset="48">
+        <Value max="1" min="0" />
+      </Signal>
+      <Signal name="powertrain_brake_pedal_descrete_input_valid" offset="49">
+        <Value max="1" min="0" />
+      </Signal>
+    </Message>
+    <Message id="0x0F1" length="4" name="PPEI_Engine_General_Status_1a">
+      <Producer>
+        <NodeRef id="1" />
+      </Producer>
+      <Signal name="moderate_brake_achieved" offset="6">
+        <Value max="1" min="0" />
+      </Signal>
+      <Signal length="8" name="platform_brake_position" offset="8">
+        <Value max="100" min="0" slope="0.393156" unit="%" />
+      </Signal>
+    </Message>
+    <Message id="0x1C3" length="5" name="PPEI_Engine_Torque_Status_2">
+      <Producer>
+        <NodeRef id="1" />
+      </Producer>
+      <Signal endianess="big" length="12" name="engine_torque_actual_ex" offset="4">
+        <Value intercept="-848" max="1199.5" min="-848" slope="0.5" unit="Nm" />
+      </Signal>
+      <Signal endianess="big" length="12" name="engine_torque_driver_req_ex" offset="20">
+        <Value intercept="-848" max="1199.5" min="-848" slope="0.5" unit="Nm" />
+      </Signal>
+    </Message>
+    <Message id="0x1E9" length="8" name="PPEI_Chassis_General_Status_1">
+      <Producer>
+        <NodeRef id="2" />
+      </Producer>
+      <Signal name="vehicle_stability_lateral_acceleration_valid" offset="4">
+        <Value max="1" min="0" />
+      </Signal>
+      <Signal endianess="big" length="12" name="vehicle_stability_lateral_acceleration" offset="4">
+        <Value max="31.9844" min="-32" slope="0.015625" type="signed" unit="m/s^2" />
+      </Signal>
+      <Signal name="brake_pedal_driver_applied_pressure_detected" offset="6">
+        <Value max="1" min="0" />
+      </Signal>
+      <Signal name="brake_pedal_driver_applied_pressure_valid" offset="7">
+        <Value max="1" min="0" />
+      </Signal>
+      <Signal length="4" name="requested_gear" offset="16">
+        <LabelSet>
+          <Label name="No_Action" value="0" />
+          <Label name="First_Gear" value="1" />
+          <Label name="Second_Gear" value="2" />
+          <Label name="Third_Gear" value="3" />
+          <Label name="Forth_Gear" value="4" />
+          <Label name="Fifth_Gear" value="5" />
+          <Label name="Sixth_Gear" value="6" />
+          <Label name="Seventh_Gear" value="7" />
+          <Label name="Eigth_Gear" value="8" />
+        </LabelSet>
+      </Signal>
+      <Signal name="vdcs_active" offset="24">
+        <Value max="1" min="0" />
+      </Signal>
+      <Signal name="tcs_active" offset="28">
+        <Value max="1" min="0" />
+      </Signal>
+      <Signal name="abs_active" offset="30">
+        <Value max="1" min="0" />
+      </Signal>
+      <Signal name="vdcs_yaw_rate_valid" offset="36">
+        <Value max="1" min="0" />
+      </Signal>
+      <Signal endianess="big" length="12" name="vehicle_dynamics_yaw_rate" offset="36">
+        <Notes>Yaw_Rate</Notes>
+        <Value intercept="-128" max="128" min="-128" slope="0.0625" type="signed" unit="Degrees/sec" />
+      </Signal>
+      <Signal name="vdcs_understeer_valid" offset="50">
+        <Value max="1" min="0" />
+      </Signal>
+      <Signal endianess="big" length="10" name="vdcs_over_understeer" offset="54">
+        <Value max="256" min="-256" slope="0.5" type="signed" unit="%" />
+      </Signal>
+    </Message>
+    <Message id="0x1E5" length="8" name="PPEI_Steering_Wheel_Angle">
+      <Producer>
+        <NodeRef id="2" />
+      </Producer>
+      <Signal endianess="big" length="16" name="steering_wheel_angle" offset="8">
+        <Value max="2048" min="-2048" slope="0.0625" type="signed" unit="Degrees" />
+      </Signal>
+    </Message>
+    <Message id="0x1F5" length="8" name="PPEI_Transmission_General_Status_2">
+      <Producer>
+        <NodeRef id="3" />
+      </Producer>
+      <Signal length="4" name="transmission_estimated_gear" offset="0">
+        <Value unit="Gear_Number" />
+        <LabelSet>
+          <Label name="Park" value="15" />
+          <Label name="Reverse" value="14" />
+          <Label name="No Description" value="0" />
+        </LabelSet>
+      </Signal>
+      <Signal length="3" name="transmission_torque_converter_clutch_mode" offset="5">
+        <LabelSet>
+          <Label name="Unlocked" value="0" />
+          <Label name="Transition" value="1" />
+          <Label name="Controlled_Slip" value="2" />
+          <Label name="Locked" value="3" />
+          <Label name="Not_Supported" value="7" />
+        </LabelSet>
+      </Signal>
+      <Signal length="4" name="transmission_commanded_gear" offset="8">
+        <Value unit="Gear" />
+      </Signal>
+      <Signal length="2" name="gear_shift_direction" offset="12">
+        <Value type="signed" unit="Direction" />
+      </Signal>
+      <Signal name="top_clutch_travel" offset="14">
+        <Value max="1" min="0" />
+      </Signal>
+      <Signal name="skip_shift_active" offset="32">
+        <Value max="1" min="0" />
+      </Signal>
+    </Message>
+    <Message id="0x3D1" length="8" name="PPEI_Engine_General_Status_2">
+      <Producer>
+        <NodeRef id="1" />
+      </Producer>
+      <Signal length="8" name="throttle_position" offset="0">
+        <Value max="100" min="0" slope="0.393156" unit="%" />
+      </Signal>
+      <Signal endianess="big" length="12" name="cruise_control_selected_speed" offset="20">
+        <Value max="256" min="0" slope="0.0625" unit="kph" />
+      </Signal>
+      <Signal endianess="big" length="12" name="fuel_consumption_rate" offset="36">
+        <Value max="102.375" min="0" slope="0.025" unit="l/h" />
+      </Signal>
+      <Signal length="8" name="boost_pressure_indication" offset="48">
+        <Value max="100" min="0" slope="0.393156" unit="%" />
+      </Signal>
+    </Message>
+    <Message id="0x4C1" length="8" name="PPEI_Engine_General_Status_4">
+      <Producer>
+        <NodeRef id="1" />
+      </Producer>
+      <Signal length="8" name="barametric_absolute_pressure" offset="8">
+        <Value max="127.5" min="0" slope="0.5" unit="kpa" />
+      </Signal>
+      <Signal length="8" name="engine_coolant_temperature" offset="16">
+        <Value intercept="-40" max="215" min="-40" unit="C" />
+      </Signal>
+      <Signal length="8" name="engine_intake_temperature" offset="24">
+        <Value intercept="-40" max="215" min="-40" unit="C" />
+      </Signal>
+      <Signal length="8" name="outside_air_temperature_estimate" offset="32">
+        <Value intercept="-40" max="87.5" min="-40" slope="0.5" unit="C" />
+      </Signal>
+    </Message>
+    <Message id="0x4C9" length="4" name="PPEI_Transmission_General_Status_3">
+      <Producer>
+        <NodeRef id="3" />
+      </Producer>
+      <Signal length="8" name="trans_oil_temp" offset="8">
+        <Value intercept="-40" max="215" min="-40" unit="C" />
+      </Signal>
+    </Message>
+    <Message id="0x4D1" length="8" name="PPEI_Engine_General_Status_5">
+      <Producer>
+        <NodeRef id="1" />
+      </Producer>
+      <Signal length="8" name="engine_oil_temp" offset="8">
+        <Value intercept="-40" max="215" min="-40" unit="C" />
+      </Signal>
+      <Signal length="8" name="engine_oil_pressure" offset="16">
+        <Value max="1020" min="0" slope="4" unit="kPa" />
+      </Signal>
+      <Signal endianess="big" length="12" name="total_fuel_capacity" offset="28">
+        <Value max="512" min="0" slope="0.125" unit="L" />
+      </Signal>
+      <Signal length="8" name="fuel_level_percent" offset="40">
+        <Value max="100" min="0" slope="0.39215" unit="%" />
+      </Signal>
+    </Message>
+    <Message id="0x3E9" length="8" name="PPEI_Vehicle_Speed_and_Distance">
+      <Producer>
+        <NodeRef id="1" />
+      </Producer>
+      <Signal endianess="big" length="15" name="speed_average_driven" offset="1">
+        <Value max="512" min="0" slope="0.015625" unit="kph" />
+      </Signal>
+      <Signal endianess="big" length="15" name="speed_average_non_driven" offset="33">
+        <Value max="512" min="0" slope="0.015625" unit="kph" />
+      </Signal>
+    </Message>
+    <Message id="0x1F1" length="8" name="PPEI_Platform_General_Status">
+      <Producer>
+        <NodeRef id="2" />
+      </Producer>
+      <Signal name="power_mode_master_accessory" offset="2">
+        <Value max="1" min="0" />
+      </Signal>
+      <Signal name="master_run_crank_terminal" offset="3">
+        <Value max="1" min="0" />
+      </Signal>
+      <Signal length="2" name="sys_backup_power_mode" offset="4">
+        <LabelSet>
+          <Label name="Off" value="0" />
+          <Label name="Accessory" value="1" />
+          <Label name="Run" value="2" />
+          <Label name="Crank_Request" value="3" />
+        </LabelSet>
+      </Signal>
+      <Signal endianess="big" length="2" name="system_power_mode" offset="6">
+        <Value max="1" min="0" />
+        <LabelSet>
+          <Label name="Off" value="0" />
+          <Label name="Accessory" value="1" />
+          <Label name="Run" value="2" />
+          <Label name="Crank_Request" value="3" />
+        </LabelSet>
+      </Signal>
+      <Signal length="2" name="ac_compressor_mode_request" offset="12">
+        <Value max="1" min="0" />
+      </Signal>
+      <Signal name="park_brake_active" offset="36">
+        <Value max="1" min="0" />
+      </Signal>
+      <Signal name="display_measurement_system" offset="59">
+        <Value max="1" min="0" />
+      </Signal>
+    </Message>
+    <Message id="0x1EF" length="8" name="PPEI_Fuel_System_Request_2">
+      <Producer>
+        <NodeRef id="1" />
+      </Producer>
+      <Signal length="16" name="mass_airflow" offset="16">
+        <Value max="656" min="0" slope="0.01" unit="gram/s" />
+      </Signal>
+    </Message>
+    <Message id="0x1EB" length="2" name="PPEI_Fuel_System_Status">
+      <Producer>
+        <NodeRef id="1" />
+      </Producer>
+      <Signal endianess="big" length="10" name="fuel_system_estimated_pressure" offset="6">
+        <Value max="1023" min="0" unit="kPa" />
+      </Signal>
+    </Message>
+    <Message id="0x0F9" length="8" name="PPEI_Transmission_General_Status_1">
+      <Producer>
+        <NodeRef id="3" />
+      </Producer>
+      <Signal endianess="big" length="15" name="Estimated_Torque_Ratio" offset="1">
+        <Value max="63.99" min="-64" slope="0.0039" type="signed" unit="Ratio" />
+      </Signal>
+      <Signal endianess="big" length="16" name="Output_Shaft_Angular_Velocity" offset="24">
+        <Value max="16383.8" min="0" slope="0.25" unit="rpm" />
+      </Signal>
+    </Message>
+    <Message id="0x1C7" length="7" name="PPEI_Chassis_Engine_Torque_Request_1">
+      <Producer>
+        <NodeRef id="2" />
+      </Producer>
+      <Signal length="2" name="Torque_Intervention_Type" offset="4">
+        <LabelSet>
+          <Label name="No_Intervention" value="0" />
+          <Label name="Reduce_Torque" value="1" />
+          <Label name="Increase_Torque" value="2" />
+        </LabelSet>
+      </Signal>
+      <Signal endianess="big" length="12" name="Torque_Request_Value" offset="4">
+        <Value intercept="-848" max="1199.5" min="-848" slope="0.5" unit="Nm" />
+      </Signal>
+    </Message>
+    <Message id="0x1ED" length="8" name="PPEI_Fuel_Sytem_Request_2">
+      <Producer>
+        <NodeRef id="1" />
+      </Producer>
+      <Signal endianess="big" length="10" name="Fuel_Delivery_Pressue_Requested" offset="6">
+        <Value max="1023" min="0" unit="kPa" />
+      </Signal>
+      <Signal endianess="big" length="16" name="Instantaneous_Fuel_Flow_Rate" offset="16">
+        <Value max="84" min="0" slope="0.000976563" unit="g/s" />
+      </Signal>
+      <Signal endianess="big" length="16" name="Advance_Fuel_Flow_Rate" offset="32">
+        <Value max="84" min="0" slope="0.000976563" unit="g/s" />
+      </Signal>
+      <Signal endianess="big" length="16" name="Commanded_Air_Fuel_Ratio" offset="48">
+        <Value max="32" min="0" slope="0.000488" />
+      </Signal>
+    </Message>
+    <Message id="0x3F1" length="6" name="PPEI_Platfrom_Engine_Control_Requests">
+      <Producer>
+        <NodeRef id="1" />
+      </Producer>
+      <Signal endianess="big" length="8" name="Egine_Cooling_Fan_Adjustment" offset="0">
+        <Value max="100" min="-100" slope="0.7812" type="signed" unit="%" />
+      </Signal>
+      <Signal endianess="big" length="8" name="Generator_Duty_Setpoint" offset="8">
+        <Value max="100" min="-100" slope="0.3906" unit="%" />
+      </Signal>
+      <Signal endianess="big" length="8" name="Vehicle_Top_Speed_Limit_Request" offset="16">
+        <Value max="512" min="0" slope="2" unit="kph" />
+      </Signal>
+    </Message>
+    <Message id="0x3F9" length="8" name="PPEI_Engine_General_Status_3">
+      <Producer>
+        <NodeRef id="1" />
+      </Producer>
+      <Signal endianess="big" length="8" name="Fan_Speed" offset="40">
+        <Value max="100" min="0" slope="0.3906" unit="%" />
+      </Signal>
+      <Signal endianess="big" length="8" name="Oil_Life_Remaining" offset="48">
+        <Value max="100" min="0" slope="0.3906" unit="%" />
+      </Signal>
+    </Message>
+    <Message id="0x3FB" length="2" name="PPEI_Engine_Fuel_Status">
+      <Producer>
+        <NodeRef id="1" />
+      </Producer>
+      <Signal endianess="big" length="2" name="Engine_Fuel_Control_State" offset="6">
+        <LabelSet>
+          <Label name="Open_Loop" value="0" />
+          <Label name="Non-Stoichometric_Closed_Loop" value="1" />
+          <Label name="Closed_Loop" value="2" />
+        </LabelSet>
+      </Signal>
+      <Signal endianess="big" length="8" name="Fuel_Alcohol_Composition" offset="8">
+        <Value max="100" min="0" slope="0.3906" unit="%" />
+      </Signal>
+    </Message>
+  </Bus>
+</NetworkDefinition>
